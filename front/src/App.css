@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+.Navbar {
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.Nav-logo {
+  width: 100px;
+}
+.Nav-logo img {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.Nav-button button {
+  margin-left: 10px;
+  color: white;
+  background-color: rgb(24, 24, 131);
+  height: 40px;
+  font-weight: 700;
+  border-radius: 7px;
+}
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.form {
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #000000;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #0b34b9;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #ef3b3a;
+}
+.Footer {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: initial;
+  margin-top: 100px;
+}
+.Footer .Footer_logo {
+  width: 270px;
+  height: 100%;
+  margin-right: 20px;
+}
+.Footer_logo img {
+  width: 100%;
+}
+* link {
+  text-decoration: none;
+}
+.Footer .Footer-G {
+  color: white;
+  margin-right: 180px;
+  margin-top: 10px;
+  font-size: x-small;
+}
+.Footer .Footer-M {
+  color: white;
+  margin-right: 180px;
+  margin-top: 10px;
+
+  font-size: x-small;
+}
+.Footer .Footer-D {
+  color: white;
+  font-size: x-small;
+  width: 250px;
+}
+.create {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.create .creer_annace {
+  display: flex;
+  color: black;
+  margin-top: 150px;
+  color: white;
+  background-color: rgb(24, 24, 131);
+}
+.create .creer_annace h1 {
+  margin: 0 auto;
+}
+.create input {
+  border: none;
+  width: 450px;
+}
+.create .description {
+  border: solid;
+  width: 1005px;
+  height: 200px;
+}
+.create .description input {
+  width: 1000px;
+  height: 199px;
+}
+.create .image input {
+  width: 1000px;
+  border: solid;
+}
+.create button {
+  margin-top: 20px;
+  color: white;
+  margin-left: 700px;
+  background-color: rgb(24, 24, 131);
+  height: 40px;
+  font-weight: 700;
+  border-radius: 7px;
+}
+table,
+td {
+  border: 1px solid #333;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+.home_page {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.home_page .articles {
+  width: 22%;
+  background-color: rgb(0, 0, 0);
+  margin-top: 150px;
+  flex-direction: column;
+  display: flex;
+}
+.home_page .posts {
+  width: 75%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 150px;
+}
+.home_page .articles button {
+  margin-top: 20px;
+  background-color: rgb(24, 24, 131);
+  color: white;
+  height: 40px;
+  font-weight: 700;
+  border-radius: 7px;
+  width: 90%;
+  margin-left: 10px;
+}
+.post {
+  background-color: white;
+  width: 240px;
+  padding: 10px;
+}
+.post img {
+  width: 260px;
+  height: 200px;
+}
+.XX {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.butt {
+  display: block;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.butt button {
+  background-color: red;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+.post .title {
+  display: flex;
+  justify-content: space-around;
+  font-size: xx-small;
+}
+.post h2 {
+  margin-left: 100px;
+  font-size: xx-large;
+}
+
+.deta {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+.sslide {
+  width: 700px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 100px;
+}
+
+.slides {
+  padding: 0;
+  width: 609px;
+  height: 420px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slides * {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide-container {
+  display: block;
+}
+
+.slide {
+  top: 0;
+  opacity: 0;
+  width: 609px;
+  height: 420px;
+  display: block;
+  position: absolute;
+
+  transform: scale(0);
+
+  transition: all 0.7s ease-in-out;
+  margin-bottom: 50pxs;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  position: inherit;
+}
+
+.nav label {
+  width: 200px;
+  height: 100%;
+  display: none;
+  position: absolute;
+
+  opacity: 0;
+  z-index: 9;
+  cursor: pointer;
+
+  transition: opacity 0.2s;
+
+  color: #fff;
+  font-size: 156pt;
+  text-align: center;
+  line-height: 380px;
+  font-family: "Varela Round", sans-serif;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label {
+  opacity: 0.5;
+}
+
+.nav label:hover {
+  opacity: 1;
+}
+
+.nav .next {
+  right: 0;
+}
+
+input:checked + .slide-container .slide {
+  opacity: 1;
+
+  transform: scale(1);
+
+  transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label {
+  display: block;
+}
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+}
+
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+  background: rgba(0, 0, 0, 0.8);
+}
+.modal-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.438);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  width: 900px;
+  height: 600px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 19px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal h1 {
+  width: 100%;
+  margin-left: 230px;
+}
+.modal .field {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.modal input {
+  width: 200px;
+  border: solid;
+  margin-right: 30px;
+}
+.D {
+  margin-left: 50px;
+}
+.I {
+  margin-left: 50px;
+}
+.D input {
+  width: 780px;
+  height: 50px;
+  display: flex;
+  margin-left: 90px;
+  margin: 0 auto;
+}
+.modal .cancel_save {
+  justify-content: start;
+  gap: 20px;
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+.cancel_save button {
+  width: 100px;
+  margin-left: 0px;
+}

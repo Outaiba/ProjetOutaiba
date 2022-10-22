@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://headway-widget.net/widgets/J14Og7 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <script>
+//<![CDATA[
+!function(e){var t={};function s(n){if(t[n])return t[n].exports;var r=t[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,s),r.l=!0,r.exports}s.m=e,s.c=t,s.d=function(e,t,n){s.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},s.r=function(e){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},s.t=function(e,t){if(1&t&&(e=s(e)),8&t)return e;if(4&t&&"object"===typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(s.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)s.d(n,r,function(t){return e[t]}.bind(null,r));return n},s.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return s.d(t,"a",t),t},s.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},s.p="/assets/packs/",s(s.s=956)}({956:function(e,t,s){"use strict";s.r(t);s(957),s(958)},957:function(e,t,s){},958:function(e,t){var s,n=function(e,t){return function(){return e.apply(t,arguments)}},r=[].indexOf||function(e){for(var t=0,s=this.length;t<s;t++)if(t in this&&this[t]===e)return t;return-1},i={}.hasOwnProperty;s=function(){function e(){this.log=n(this.log,this)}return e.prototype.CODENAME="CaptainAmerica",e.prototype.postMessage=function(){var e,t,s;return t=(e=Array.prototype.slice.call(arguments)).shift(),s=e,window.parent.postMessage([this.CODENAME,t,s],"*")},e.prototype.setStyles=function(e,t){var s,n;for(s in n=[],t)n.push(e.style[s]=t[s]);return n},e.prototype.log=function(){if(this.options.debug)return console.log("[Headway Debug]",arguments)},e.prototype.diff=function(e,t){return e.filter((function(e){return r.call(t,e)<0}))},e}(),window.App=function(e){function t(e){this.applyTranslations=n(this.applyTranslations,this),this.replaceBaseUrl=n(this.replaceBaseUrl,this),this.setDetailsHeight=n(this.setDetailsHeight,this),this.setListHeight=n(this.setListHeight,this),this.serverStore=n(this.serverStore,this),this.trackEvent=n(this.trackEvent,this),this.markSeen=n(this.markSeen,this),this.markRead=n(this.markRead,this),this.markAllSeen=n(this.markAllSeen,this),this.markItems=n(this.markItems,this),this.setState=n(this.setState,this),this.initState=n(this.initState,this),this.badgeCount=n(this.badgeCount,this),this.reload=n(this.reload,this),this.refresh=n(this.refresh,this),this.getCurrentIds=n(this.getCurrentIds,this),this.migrateLocalStorage=n(this.migrateLocalStorage,this),this.onceReady=n(this.onceReady,this),this.showDetails=n(this.showDetails,this),this.showIndex=n(this.showIndex,this),this.wheneverClosed=n(this.wheneverClosed,this),this.setBadge=n(this.setBadge,this),this.wheneverOpened=n(this.wheneverOpened,this),this.readMessage=n(this.readMessage,this),this.makeInaccessible=n(this.makeInaccessible,this),this.makeAccessible=n(this.makeAccessible,this),this.removeOutlineOnClick=n(this.removeOutlineOnClick,this),this.setupDefaults=n(this.setupDefaults,this),this.getCategories=n(this.getCategories,this),this.getChangelogs=n(this.getChangelogs,this),t.__super__.constructor.call(this),this.options=e,this.elements={logItems:document.querySelectorAll(".logItem"),backLinks:document.querySelectorAll(".back"),indexCont:document.getElementById("index"),logDetailsItem:document.querySelectorAll(".logDetailsItem"),innercont:document.querySelector(".innercont"),title:document.querySelector("h3"),readMore:document.querySelectorAll(".link a"),seeMore:document.querySelector(".footer a"),footer:document.querySelector(".footer")},this.current={data:null},this.setupDefaults(),this.log("App.constructor",this.options,this.elements,this.current)}return function(e,t){for(var s in t)i.call(t,s)&&(e[s]=t[s]);function n(){this.constructor=e}n.prototype=t.prototype,e.prototype=new n,e.__super__=t.prototype}(t,e),t.prototype.getChangelogs=function(){var e,t,s,n,r,i,o,a,l,h,u;if(this.changelogs)return this.changelogs;for(this.changelogs=[],s=r=0,i=(l=this.elements.logItems).length;r<i;s=++r)u=l[s],n=parseInt(u.dataset.id),t=(a=(o=this.elements.logDetailsItem[s]).querySelector(".content noscript")).textContent||a.innerHTML,e=[],this.getCategories(n).forEach((function(t){return e.push(t.name)})),this.changelogs.push({id:n,title:null!=(h=u.querySelector(".title"))?h.innerText:void 0,categories:e,content:{short:u.querySelector(".short").innerHTML,long:t,more:!!o.querySelector("a.more")},dateTime:new Date(u.dataset.date),url:o.querySelector(".link a").href});return this.changelogs},t.prototype.getCategories=function(e){return window.categories[e]},t.prototype.setupDefaults=function(){var e,t,s,n,r,i,o,a,l,h;for(a=this.elements.logItems,h=this,e=function(e,t){var s,n,r,i,o,a,l;return r=parseInt(e.dataset.id),s=h.getCategories(r),n={position:t+1,id:r,title:(null!=(o=e.querySelector(".title"))?o.innerText.replace(/\.$/,""):void 0)||"",category:null!=(a=s[0])&&null!=(l=a.name)?l.toLowerCase():void 0,categories:s},null!=(i=h.elements.logDetailsItem[t].querySelector(".link a"))&&i.addEventListener("click",(function(){return h.postMessage("setAction",{event:"onReadMore",data:n})})),h.removeOutlineOnClick(e),e.addEventListener("click",(function(s){return s.stopPropagation(),s.preventDefault(),h.showDetails(t),h.trackEvent("/r/read/"+h.accountId+"/"+e.dataset.id),h.markRead(e.dataset.id),h.postMessage("setAction",{event:"onShowDetails",data:n})}))},t=s=0,r=a.length;s<r;t=++s)e(o=a[t],t);for(n=0,i=(l=this.elements.backLinks).length;n<i;n++)o=l[n],this.removeOutlineOnClick(o),o.addEventListener("click",function(e){return function(t){return t.stopPropagation(),t.preventDefault(),e.showIndex()}}(this));if(this.elements.logItems.length>0)return window.addEventListener("message",function(e){return function(t){var s,n,r,i;if(r=(s=t.data)[0],i=s[1],n=s[2],r===e.CODENAME)return e.readMessage(i,n)}}(this))},t.prototype.removeOutlineOnClick=function(e){return e.addEventListener("click",(function(){return e.classList.add("noOutline")})),e.addEventListener("blur",(function(){return e.classList.remove("noOutline")}))},t.prototype.makeAccessible=function(e){var t,s,n,r,i;for(e.removeAttribute("aria-hidden"),i=[],t=0,s=(r=e.querySelectorAll("a")).length;t<s;t++)n=r[t],i.push(n.removeAttribute("tabindex"));return i},t.prototype.makeInaccessible=function(e){var t,s,n,r,i;for(e.setAttribute("aria-hidden","true"),i=[],t=0,s=(r=e.querySelectorAll("a")).length;t<s;t++)n=r[t],i.push(n.setAttribute("tabindex","-1"));return i},t.prototype.readMessage=function(e,t){switch(e){case"opened":return this.wheneverOpened();case"closed":return this.wheneverClosed();case"ready":return this.onceReady(t[0]);case"markSeen":return this.markSeen(t[0]);case"markAllSeen":return this.markAllSeen();case"markRead":return this.markRead(t[0]);case"reload":return this.reload()}},t.prototype.wheneverOpened=function(){if(this.showIndex(),this.visible=!0,!this.options.embed)return this.markAllSeen(),this.trackEvent("/r/open/"+this.accountId)},t.prototype.setBadge=function(){return this.postMessage("setBadge",this.badgeCount())},t.prototype.wheneverClosed=function(){return this.visible=!1,setTimeout(this.showIndex,300)},t.prototype.showIndex=function(){var e,t,s,n,r;for(this.elements.innercont.classList.remove("detailsOpen"),this.setListHeight(),this.makeAccessible(this.elements.indexCont),r=[],t=0,s=(n=this.elements.logDetailsItem).length;t<s;t++)e=n[t],r.push(this.makeInaccessible(e));return r},t.prototype.showDetails=function(e){var t,s,n,r;for(this.elements.innercont.classList.add("detailsOpen"),this.setDetailsHeight(e),this.makeInaccessible(this.elements.indexCont),s=0,n=(r=this.elements.logDetailsItem).length;s<n;s++)t=r[s],this.makeInaccessible(t);return this.makeAccessible(this.elements.logDetailsItem[e])},t.prototype.onceReady=function(e){if(e.newWidgetPositioning?(document.body.classList.add(e.position.x||"right"),document.body.classList.add(e.position.y||"bottom")):(document.body.classList.add("right"),document.body.classList.add("bottom")),this.options.embed=e.options.embed,this.options.debug=e.options.debug,this.options.baseUrl=e.options.baseUrl,this.token=e.options.token,this.current.data=e,this.localStorage=e.localStorage,this.accountId=e.options.account,this.applyTranslations(document.getElementById("index")),this.migrateLocalStorage())return this.initState(),this.markItems("read"),this.markItems("seen"),setTimeout(this.refresh,6e4),null!=this.elements.seeMore&&this.options.baseUrl&&(this.elements.seeMore.href=this.options.baseUrl),this.setListHeight(),this.postMessage("widgetReady",{options:this.options,changelogs:this.getChangelogs(),state:this.state,badgeCount:this.badgeCount()}),this.log("App.setupDefaults#ready",e)},t.prototype.migrateLocalStorage=function(){return"server"!==this.options.activeStorage||null==this.token||!this.localStorage.seen.length&&!this.localStorage.read.length||(this.serverStore("/r/seen/"+this.accountId,"token="+this.token+"&seen="+this.localStorage.seen.join(","),(e=this,function(){return e.serverStore("/r/read/"+e.accountId,"token="+e.token+"&read="+e.localStorage.read.join(","),(function(){return e.postMessage("migrateLocalStorage")}))})),!1);var e},t.prototype.getCurrentIds=function(){var e,t,s,n,r;for(r=[],s=0,n=(t=Array.prototype.slice.call(this.elements.logItems)).length;s<n;s++)e=t[s],r.push(parseInt(e.dataset.id));return r},t.prototype.refresh=function(){if(this.options.autorefresh)return!0===this.visible?setTimeout(this.refresh,200):this.reload()},t.prototype.reload=function(){return document.location.reload()},t.prototype.badgeCount=function(){var e,t,s,n,r,i,o,a;if("server"===this.options.activeStorage&&null==this.token)return 0;for(t=this.options.expireAfter||Infinity,e=0,a=(new Date).getTime(),r=0,i=(o=document.querySelectorAll(".logItem")).length;r<i;r++)"true"!==(s=o[r]).dataset.seen&&(n=new Date(s.dataset.date).getTime(),Math.floor((a-n)/864e5)>=t||(e+=1));return e},t.prototype.initState=function(){return this.state="server"===this.options.activeStorage?this.options.state||{read:[],seen:[]}:this.localStorage},t.prototype.setState=function(e,t){return this.state[e]=t,this.postMessage("setState",this.state),this.markItems(e),this.setBadge()},t.prototype.markItems=function(e){var t,s,n,r,i,o;if((s=this.state[e]).length>0){for(o=[],r=0,i=s.length;r<i;r++)t=s[r],(n=document.querySelector("*[data-id='"+t+"']"))?(n.dataset[e]=!0,o.push(n.classList.add(e))):o.push(void 0);return o}},t.prototype.markAllSeen=function(){var e,t;if(t=function(){var t,s,n,r;for(r=[],t=0,s=(n=this.getChangelogs().reverse()).length;t<s;t++)e=n[t],r.push(e.id);return r}.call(this),this.setState("seen",this.diff(this.state.seen,t).concat(t)),"server"===this.options.activeStorage)return this.serverStore("/r/seen/"+this.accountId,"token="+this.token+"&seen="+t.join(","))},t.prototype.markRead=function(e){if(this.setState("read",this.diff(this.state.read,[e]).concat([e])),"server"===this.options.activeStorage)return this.serverStore("/r/read/"+this.accountId,"token="+this.token+"&read="+e)},t.prototype.markSeen=function(e){if(this.setState("seen",this.diff(this.state.seen,[e]).concat([e])),"server"===this.options.activeStorage)return this.serverStore("/r/seen/"+this.accountId,"token="+this.token+"&seen="+e)},t.prototype.trackEvent=function(e){if(this.options.track)return this.xhr(e)},t.prototype.serverStore=function(e,t,s){if(null==t&&(t=""),this.token)return this.xhr(e,t,s)},t.prototype.xhr=function(e,t,s){var n;return null==t&&(t=""),(n=new XMLHttpRequest).open("POST",e),n.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),n.onreadystatechange=function(){if(4===this.readyState&&200===this.status&&null!=s)return s()},n.send(t)},t.prototype.setListHeight=function(){var e,t,s,n;return n=(t=document.getElementById("index")).querySelector(".topBar").offsetHeight,s=t.querySelector(".logList").scrollHeight,e=t.querySelector(".footer").offsetHeight,this.postMessage("setHeight",{height:n+s+e})},t.prototype.setDetailsHeight=function(e){var t,s,n,r,i,o,a,l,h,u,c,d,p,g,f,m,y,v;for(a=0,u=(p=this.elements.logDetailsItem).length;a<u;a++)o=p[a],this.setStyles(o,{display:"none"});if(n=this.elements.logDetailsItem[e].querySelector("noscript")){for(t=(t=n.innerHTML).replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&amp;/g,"&"),(y=n.parentNode).innerHTML=t,r=y.parentNode.querySelector(".logDetailsItem .link a").href,l=0,c=(g=y.querySelectorAll("img")).length;l<c;l++)(i=g[l]).width>300&&i.classList.add("bigImage");for(h=0,d=(f=y.querySelectorAll(".videoThumbWidth, .bigImage")).length;h<d;h++)f[h].addEventListener("click",(function(){return window.open(r)}));this.addTargetBlank(this.elements.logDetailsItem[e]),this.replaceBaseUrl(this.elements.logDetailsItem[e]),this.applyTranslations(y)}return this.setStyles(this.elements.logDetailsItem[e],{display:""}),v=this.elements.logDetailsItem[e].querySelector(".topBar").offsetHeight,m=this.elements.logDetailsItem[e].querySelector(".slideBody").scrollHeight,s=this.elements.logDetailsItem[e].querySelector(".bottomBar").offsetHeight,this.postMessage("setHeight",{height:v+m+s})},t.prototype.replaceBaseUrl=function(e){var t,s;if(s=e.querySelector(".link a"),this.options.baseUrl&&null!=s)return t=s.dataset.path,s.href=this.options.baseUrl+t},t.prototype.addTargetBlank=function(e){var t,s,n,r,i;for(i=[],t=0,s=(r=e.querySelectorAll(".slideBody a")).length;t<s;t++)(n=r[t]).target="_blank",i.push(n.rel="noopener noreferrer");return i},t.prototype.applyTranslations=function(e){var t,s,n,r,i,o,a,l;if((null!=(i=this.current.data)?i.options.translations:void 0)&&(null!=(l=this.current.data.options.translations).title&&(this.elements.title.textContent=l.title),null!=l.footer&&((r=document.createElement("a")).target="_blank",r.href=this.elements.seeMore.href,r.innerText=l.footer,this.elements.footer.innerHTML="",this.elements.footer.appendChild(r)),null!=l.labels&&e.querySelectorAll(".category").forEach((function(e){var t;if(t=l.labels[e.innerText.toLowerCase()])return e.innerText=t})),null!=l.readMore)){for(a=[],s=0,n=(o=this.elements.readMore).length;s<n;s++)t=o[s],a.push(t.textContent=l.readMore);return a}},t}(s)}});
+
+//]]>
+</script>
+    <style>.videoThumbWidth:after{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-size:20%;background-position:50%;background-repeat:no-repeat}.videoThumbWidth.youtube:after{background-image:url(/assets/packs/media/images/editor/video/youtube-logo-252d9776ac807a54d44869b11fa55dac.png)}.videoThumbWidth.wistia:after{background-image:url(/assets/packs/media/images/editor/video/wistia-logo-7ab00495376b0066faec307f6bba4421.png)}.videoThumbWidth.vimeo:after{background-image:url(/assets/packs/media/images/editor/video/vimeo-logo-d73bdd39d4447bfdac60cbebc9fb2493.png)}.videoThumbWidth.loom:after{background-image:url(/assets/packs/media/images/editor/video/loom-logo-8e817a3feb67b2d1d7bbb2a3b7f93b6a.svg)}.videoContWidth,.videoThumbWidth{cursor:pointer;position:relative;display:inline-block;margin:0;line-height:0}.videoContWidth .videoContHeight,.videoThumbWidth .videoThumbHeight{width:100%;display:inline-block}.videoContWidth .videoContHeight .video,.videoContWidth .videoContHeight .videoThumb,.videoThumbWidth .videoThumbHeight .video,.videoThumbWidth .videoThumbHeight .videoThumb{position:absolute;top:0;left:0;width:100%;height:100%}.videoContWidth .videoContHeight .videoThumb,.videoThumbWidth .videoThumbHeight .videoThumb{background-position:50%;background-repeat:no-repeat;background-size:cover}*{box-sizing:border-box}*,body,button,input,select,textarea{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale}body,html{height:100vh}html{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:13px;overflow:hidden}body,h2,h3,p{padding:0;margin:0}p{font-size:13px}a.noOutline{outline:none!important}.outercont{color:#222c36}.outercont .cont{overflow:hidden;position:relative;height:100vh;width:100vw}.outercont .innercont{transform:translate(0);position:relative;overflow:hidden;will-change:left;transition:left .3s;width:200vw;height:100%;left:0}.outercont .innercont .logList{overflow-y:auto}.outercont .innercont .slideBody{overflow-y:hidden}.outercont .innercont.detailsOpen{left:-100%}.outercont .innercont.detailsOpen .logList{overflow-y:hidden}.outercont .innercont.detailsOpen .slideBody{overflow-y:auto}.outercont .innercont #details,.outercont .innercont #index{width:100vw;position:absolute}.outercont .innercont #index{left:0}.outercont .innercont #details{left:100vw}.outercont .innercont #index{height:100vh;display:flex;flex-direction:column}.outercont .innercont #index .logList{overflow-x:hidden;-ms-scroll-chaining:none;overscroll-behavior:contain}.outercont .innercont #index .category{font-size:11px;line-height:18px;display:inline-block;padding:0 11px;font-weight:400;border-radius:20px;margin-right:3px}.outercont .innercont #index .title{margin:0 3px}.outercont .innercont .logDetailsItem{text-overflow:ellipsis}.outercont .innercont .logDetailsItem .slideBody{padding:16px 16px 0}.outercont .innercont .logDetailsItem .slideBody:after{content:"";display:block;padding-bottom:20px}.outercont .innercont .logDetailsItem .slideBody .content{clear:both}.outercont .innercont .logDetailsItem .slideBody p{margin-bottom:10px;line-height:19px;color:#222c36;clear:both}.outercont .innercont .logDetailsItem .slideBody p:last-child{margin-bottom:0}.outercont .innercont .logDetailsItem .slideBody a{color:#3778ff}.outercont .innercont .logDetailsItem{height:100vh;display:flex;flex-direction:column}.outercont .innercont .logDetailsItem .slideBody{overflow-x:hidden;-ms-scroll-chaining:none;overscroll-behavior:contain}.outercont .innercont .logItem{display:block;clear:both;line-height:19px;padding:7px 16px 7px 12px;color:#666;text-decoration:none;border-left:3px solid #3778ff}.outercont .innercont .logItem.read{border-left:0;padding:7px 15px}.outercont .innercont .logItem:first-child{padding-top:14px}.outercont .innercont .logItem:last-child{padding-bottom:14px}.outercont .innercont .logItem:hover strong{text-decoration:underline}.outercont .innercont strong{color:#222c36;font-weight:600}.outercont .innercont .back{position:absolute;display:block;height:46px;opacity:.25;z-index:2}.outercont .innercont .back:after,.outercont .innercont .back:before{content:"";height:12px;width:1px;display:block;background:#222c36;position:absolute}.outercont .innercont .back:before{top:14px}.outercont .innercont .back:after{bottom:12px}.outercont .innercont h3.title{text-align:center;font-weight:600;font-size:14px;margin:0}.outercont .innercont .bottomBar,.outercont .innercont .topBar{margin:0 10px;position:relative}.outercont .innercont .topBar{border-bottom:1px solid #f1f1f1;padding:15px 23px}.outercont .innercont .topBar .back{top:2px;padding:5px 15px 0}.outercont .innercont .bottomBar{border-top:1px solid #f1f1f1;padding:17px 23px}.outercont .innercont .bottomBar .back{bottom:-5px;padding:5px 15px 0}.outercont .innercont .link{margin:15px 0 5px}.outercont .innercont .link a{color:#3778ff;font-weight:700;text-decoration:none;display:none}.outercont .innercont .link a.more{display:inline-block}.outercont .innercont .footer{background:#fcfcfc;color:#a8a8a8;font-size:12px;text-align:center;border-top:1px solid #f1f1f1;height:35px;line-height:35px;border-radius:0 0 4px 4px}.outercont .innercont .footer a{color:#a8a8a8}body.top #details .topBar .back{display:none}body.top #details .bottomBar .back{display:block}body.bottom #details .bottomBar,body.center #details .bottomBar{display:none}body.left .back{right:0}body.left .back:before{transform:rotate(-45deg)}body.left .back:after{transform:rotate(45deg)}body.right .back{left:0}body.right .back:before{transform:rotate(45deg)}body.right .back:after{transform:rotate(-45deg)}.ltr{direction:ltr}.ltr .category{margin-right:5px;float:left}.rtl{direction:rtl}.rtl .category{margin-left:5px;float:right}.headwayVideo{position:relative;display:inline-block}.headwayVideo:before{content:"";width:100%;height:100%;background:pink;opacity:.5;position:absolute;left:0;top:0;z-index:10000}.content{line-height:1.55rem;min-height:40px;clear:both}.content .category{display:inline-block;padding:1px 11px;font-size:.9em;line-height:22px;font-weight:400;margin-bottom:0;border-radius:20px}.content .afterCategories,.content .beforeCategories{display:block;margin-bottom:13px;height:0}.content audio{outline:none!important;margin-bottom:10px}.content img{-o-object-fit:scale-down;object-fit:scale-down;height:auto}.content hr{border-width:medium 0 0;border-top:1px solid #e5e5e5;margin:20px 0 25px}.content p,.content pre{margin-bottom:13px;position:relative}.content p:last-child,.content pre:last-child{margin-bottom:0}.content ol,.content ul{margin-left:22px;padding:10px 0 5px}.content ol li,.content ul li{list-style:disc;padding-left:6px;margin-bottom:5px}.content ol li{list-style:decimal}.content code,.content pre{font-family:Monaco,Menlo,Courier,Courier New,Andale Mono,Bitstream Vera Sans Mono,Lucida Console,Consolas,Droid Sans Mono;font-size:12px;background:#f7f7f7;color:#4d5863;padding:4px;border-radius:2px}.content pre{padding:8px 12px}.content pre code{padding:0}.content blockquote{color:#47525d;padding-left:10px;border-left:4px solid #ccc;margin:15px 40px 15px 0}.content b,.content strong{font-weight:500}.content h1,.content h2,.content h3,.content h4,.content h5,.content h6{font-weight:500;margin:0 0 5px;padding:0}.content h1{font-size:1.3rem}.content h2{font-size:1.15rem}.content h3{font-weight:420;font-size:1rem}.content table{width:100%;font-size:13px;margin-bottom:20px}.content table thead th{padding:5px 0;font-size:11px;letter-spacing:2px;font-weight:400;text-transform:uppercase;color:rgba(0,0,0,.3)}.content table tbody td{padding:5px 5px 5px 0;border-top:1px solid #f3f3f3}.bigImage,.videoThumbWidth{cursor:pointer}.bigImage:hover,.videoThumbWidth:hover{opacity:.9}</style>
+    <script>
+//<![CDATA[
+
+      var HW_config =  {"badgeDelay":0,"softHide":false,"eyecatcher":false,"expireAfter":15,"token":null,"activeStorage":"local","autorefresh":false,"track":true}
+
+      document.addEventListener("DOMContentLoaded", function(){
+        new App(HW_config);
+      }, false);
+
+//]]>
+</script>
+      <style>
+          #details .slideBody p a, #details .link a {
+            color: #3f51b5;
+          }
+
+        #index .logItem {
+          border-left-color: #3f51b5;
+        }
+      </style>
+
+    <style>
+  .category_0 {
+    display: none;
+  }
+
+    .category_9225 {
+      background-color: #7290df;
+      color: #fff;
+    }
+
+    #editor-body .head.head_category_9225 .background {
+      background-color: #7290df;
+    }
+    .category_9224 {
+      background-color: #ffc505;
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    #editor-body .head.head_category_9224 .background {
+      background-color: #ffc505;
+    }
+    .category_9221 {
+      background-color: #ff4772;
+      color: #fff;
+    }
+
+    #editor-body .head.head_category_9221 .background {
+      background-color: #ff4772;
+    }
+    .category_9220 {
+      background-color: #b26cee;
+      color: #fff;
+    }
+
+    #editor-body .head.head_category_9220 .background {
+      background-color: #b26cee;
+    }
+    .category_9219 {
+      background-color: #3778ff;
+      color: #fff;
+    }
+
+    #editor-body .head.head_category_9219 .background {
+      background-color: #3778ff;
+    }
+    .category_9223 {
+      background-color: #3aaa55;
+      color: #fff;
+    }
+
+    #editor-body .head.head_category_9223 .background {
+      background-color: #3aaa55;
+    }
+    .category_9222 {
+      background-color: #17caf0;
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    #editor-body .head.head_category_9222 .background {
+      background-color: #17caf0;
+    }
+</style>
+    <script>
+//<![CDATA[
+
+      var categories = {"246952":[{"name":"Fix","color":"#ff4772","id":"9221"}],"244222":[{"name":"New","color":"#3778ff","id":"9219"}],"241910":[{"name":"New","color":"#3778ff","id":"9219"}],"241715":[{"name":"Fix","color":"#ff4772","id":"9221"}],"236003":[{"name":"New","color":"#3778ff","id":"9219"}],"235216":[]}
+
+//]]>
+</script>  </head>
+  <body class="ltr right bottom">
+    <div class="outercont">
+      <div class="cont">
+        <div class="innercont">
+          <div id="index">
+  <div class="topBar">
+    <h3 class="title">Latest changes</h3>
+  </div>
+  <div class="logList">
+    <a href="https://headway-widget.net/widgets/J14Og7#" class="logItem" data-id="246952" data-date="2022-10-13T17:37:48Z">
+    <span class="category category_9221">Fix</span>
+    <strong class="title">Bug fixes &amp; improvements.</strong>
+  <span class="short">
+
+We know it’s important for your tools to be reliable and effective day in and day out. That’s...</span>
+</a> <!-- /logItem -->
+<a href="https://headway-widget.net/widgets/J14Og7#" class="logItem" data-id="244222" data-date="2022-09-16T12:24:06Z">
+    <span class="category category_9219">New</span>
+    <strong class="title">New: Funnel reports.</strong>
+  <span class="short">
+
+Funnel reports help you uncover bottlenecks and leaks in your pipelines so you can fine-tune...</span>
+</a> <!-- /logItem -->
+<a href="https://headway-widget.net/widgets/J14Og7#" class="logItem" data-id="241910" data-date="2022-08-24T16:49:35Z">
+    <span class="category category_9219">New</span>
+    <strong class="title">Add and edit organizations on iOS.</strong>
+  <span class="short">
+
+We recently updated the Streak iOS app to allow you to add and edit contacts from your iPhone...</span>
+</a> <!-- /logItem -->
+<a href="https://headway-widget.net/widgets/J14Og7#" class="logItem" data-id="241715" data-date="2022-08-22T21:23:04Z">
+    <span class="category category_9221">Fix</span>
+    <strong class="title">Bug fixes &amp; improvements.</strong>
+  <span class="short">
+
+Our engineers spent a few days fixing bugs and making improvements throughout Streak. 
+Check...</span>
+</a> <!-- /logItem -->
+<a href="https://headway-widget.net/widgets/J14Og7#" class="logItem" data-id="236003" data-date="2022-06-23T17:03:13Z">
+    <span class="category category_9219">New</span>
+    <strong class="title">Saved views in the Streak iOS app.</strong>
+  <span class="short">
+Streak’s mobile app for iPhone and iPad allows you to access your CRM and Gmail inbox on the...</span>
+</a> <!-- /logItem -->
+<a href="https://headway-widget.net/widgets/J14Og7#" class="logItem" data-id="235216" data-date="2022-06-14T21:23:35Z">
+    <strong class="title">New: Add people to a mail merge from their contact card.</strong>
+  <span class="short">It’s now easier to add contacts and organizations to an existing mail merge.
+
+Just look for the...</span>
+</a> <!-- /logItem -->
+
+  </div> <!-- /logList -->
+  <div class="footer">
+    <a target="_blank" rel="noopener noreferrer" href="https://updates.streak.com/?utm_medium=widget">Streak updates</a>
+  </div>
+</div> <!-- /logListCont -->
+
+<div id="details">
+  <div class="logDetailsItem">
+  <div class="topBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+    <h3 class="title">Bug fixes &amp; improvements</h3>
+  </div>
+  <div class="slideBody">
+    <div class="content"><noscript><span class="beforeCategories">&nbsp;</span><h3 class='category category_9221'>Fix</h3>&nbsp;<span class="afterCategories">&nbsp;</span>
+<p><img
+  src="//cloud.headwayapp.co/changelogs_images/images/small/000/096/813-8d681f24f1490eaf8aa766f51d43fa51d754e949.png"
+  alt="fixes-and-updates.png"
+  width=308.0
+  height=144.65
+/></p>
+<p>We know it’s important for your tools to be reliable and effective day in and day out. That’s why our engineers dedicate time not only to building exciting new features, but to fixing anything that might be broken or slightly off in Streak.</p>
+<p><strong>Check out our <a href="https://www.streak.com/post/october-11th-bug-fixes-and-improvements?utm_source=headway&amp;utm_medium=notification" target="_blank" rel="noopener noreferrer">blog</a> to see what changed with recent fixes and improvements.</strong></p></noscript></div>
+    <p class="link"><a target="_blank" href="https://updates.streak.com/bug-fixes-improvements-246952" data-path="/bug-fixes-improvements-246952" rel="noopener noreferrer" class="">Read the whole post</a></p>
+  </div>
+  <div class="bottomBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+  </div>
+</div>
+<div class="logDetailsItem">
+  <div class="topBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+    <h3 class="title">New: Funnel reports</h3>
+  </div>
+  <div class="slideBody">
+    <div class="content"><noscript><span class="beforeCategories"> </span><h3 class="category category_9219">New</h3> <span class="afterCategories"> </span>
+<p><img src="//cloud.headwayapp.co/changelogs_images/images/small/000/095/215-25700b0c742377f808999dd98ea1ff909aca50c4.png" alt="funnel-reports-comparison-chart.png" width="308.0" height="165.0"></p>
+<p><strong>Funnel reports help you uncover bottlenecks and leaks in your pipelines so you can fine-tune your processes and convert more leads.</strong> </p>
+<p>You’ll gain actionable insights with:</p>
+<ul>
+<li>Visualizations of your conversion funnel</li>
+<li>Comparison charts to see which lead sources, date ranges, sales reps, or customer types convert best (<em>advanced features</em>)</li>
+<li>Endless…</li>
+</ul></noscript></div>
+    <p class="link"><a target="_blank" href="https://updates.streak.com/new-funnel-reports-244222" data-path="/new-funnel-reports-244222" rel="noopener noreferrer" class="more">Read the whole post</a></p>
+  </div>
+  <div class="bottomBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+  </div>
+</div>
+<div class="logDetailsItem">
+  <div class="topBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+    <h3 class="title">Add and edit organizations on iOS</h3>
+  </div>
+  <div class="slideBody">
+    <div class="content"><noscript><span class="beforeCategories">&nbsp;</span><h3 class='category category_9219'>New</h3>&nbsp;<span class="afterCategories">&nbsp;</span>
+<p><img
+  src="//cloud.headwayapp.co/changelogs_images/images/small/000/093/832-d2182f1aaaaa23f91ae2ee09a5ca899146567da2.png"
+  alt="organization-ios 1.png"
+  width=308.0
+  height=300.3
+/></p>
+<p>We recently updated the <a href="https://apps.apple.com/us/app/streak-crm-for-gmail/id674067680" target="_blank" rel="noopener noreferrer">Streak iOS app</a> to allow you to <a href="https://www.streak.com/post/add-and-edit-crm-contacts-on-the-go-with-streak-ios-app" target="_blank" rel="noopener noreferrer">add and edit contacts from your iPhone or iPad</a>. </p>
+<p><strong>Now, you can add the companies they work with as organizations to better manage relationships, deals, and opportunities in your CRM using your iPhone or iPad.</strong></p>
+<p>Organizations allow you to track each contact that you have within a single company. They help you map out relationships and stay on top of your team’s communication history with automatic timelines of emails and events in <a href="https://www.streak.com/university/contacts-and-organizations#lessons" target="_blank" rel="noopener noreferrer">organization pages</a>. </p>
+<p>Learn more and find step-by-step instructions in our <a href="https://www.streak.com/post/add-and-edit-organizations-in-the-streak-ios-app" target="_blank" rel="noopener noreferrer">blog</a>.</p></noscript></div>
+    <p class="link"><a target="_blank" href="https://updates.streak.com/add-and-edit-organizations-on-ios-241910" data-path="/add-and-edit-organizations-on-ios-241910" rel="noopener noreferrer" class="">Read the whole post</a></p>
+  </div>
+  <div class="bottomBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+  </div>
+</div>
+<div class="logDetailsItem">
+  <div class="topBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+    <h3 class="title">Bug fixes &amp; improvements</h3>
+  </div>
+  <div class="slideBody">
+    <div class="content"><noscript><span class="beforeCategories">&nbsp;</span><h3 class='category category_9221'>Fix</h3>&nbsp;<span class="afterCategories">&nbsp;</span>
+<p><img
+  src="//cloud.headwayapp.co/changelogs_images/images/small/000/093/715-9605ace9f344bde7ba1e9d49eff17c5422efe29d.png"
+  alt="fixes-and-updates.svg"
+  width=308.0
+  height=144.65
+/></p>
+<p>Our engineers spent a few days fixing bugs and making improvements throughout Streak. </p>
+<p>Check out what changed and learn more in our <a href="https://www.streak.com/post/august-23rd-bug-fixes-and-improvements?utm_medium=headway" target="_blank" rel="noopener noreferrer">blog</a>.</p></noscript></div>
+    <p class="link"><a target="_blank" href="https://updates.streak.com/bug-fixes-improvements-241715" data-path="/bug-fixes-improvements-241715" rel="noopener noreferrer" class="">Read the whole post</a></p>
+  </div>
+  <div class="bottomBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+  </div>
+</div>
+<div class="logDetailsItem">
+  <div class="topBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+    <h3 class="title">Saved views in the Streak iOS app</h3>
+  </div>
+  <div class="slideBody">
+    <div class="content"><noscript><span class="beforeCategories">&nbsp;</span><h3 class='category category_9219'>New</h3>&nbsp;<span class="afterCategories">&nbsp;</span>
+<p>Streak’s <a href="https://apps.apple.com/mr/app/streak-crm-for-gmail/id674067680" target="_blank" rel="noopener noreferrer">mobile app for iPhone and iPad</a> allows you to access your CRM and Gmail inbox on the go.</p>
+<p><strong>We recently added the ability to access and use your <a href="https://www.streak.com/post/saved-views-in-streaks-ios-app" target="_blank" rel="noopener noreferrer">saved views in the mobile app on iOS devices</a>.</strong></p>
+<p>Saved views you to filter, sort, and group your pipelines to see which opportunities need your attention the most.</p>
+<p>For example, you can use saved views to quickly find:</p>
+<p>👤 Leads assigned to you </p>
+<p>👻 Contacts with no interaction in 7 days </p>
+<p>🗓️ Deals closing this week </p>
+<p>📍 Properties or clients in a certain region</p>
+<p>⭐ High priority deals</p>
+<p>👁️ Customer segments based on email tracking engagement data </p>
+<p>Learn more in our <a href="https://www.streak.com/post/saved-views-in-streaks-ios-app" target="_blank" rel="noopener noreferrer">blog</a>. </p></noscript></div>
+    <p class="link"><a target="_blank" href="https://updates.streak.com/saved-views-in-the-streak-ios-app-236003" data-path="/saved-views-in-the-streak-ios-app-236003" rel="noopener noreferrer" class="">Read the whole post</a></p>
+  </div>
+  <div class="bottomBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+  </div>
+</div>
+<div class="logDetailsItem">
+  <div class="topBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+    <h3 class="title">New: Add people to a mail merge from their contact card</h3>
+  </div>
+  <div class="slideBody">
+    <div class="content"><noscript><p>It’s now easier to add contacts and organizations to an existing mail merge.</p>
+<p><img
+  src="//cloud.headwayapp.co/changelogs_images/images/small/000/089/788-a6c568b1b3d978d63d10c233ad75ddb84b97155f.png"
+  alt="pipeline-add-to-mm.png"
+  width=308.0
+  height=73.15
+/></p>
+<p><strong>Just look for the email icon next to a contact or organization, select "Add to Mail Merge," and choose which mail merge you’d like to add them to.</strong></p>
+<p>You can find contact cards:</p>
+<ul>
+<li>in the Streak sidebar next to an email conversation that's been added to a pipeline</li>
+<li>in your pipeline view</li>
+<li>in the box view</li>
+<li>in the contact sidebar</li>
+</ul>
+<p>Once you create your mail merge, add new recipients to the email sequence each time you need to reach out to new leads, get feedback, ask for reviews, or in any other scenario that requires outreach. </p>
+<p>Learn more in our <a href="https://www.streak.com/post/new-add-individual-people-to-a-mail-merge-from-their-contact-card?utm_medium=headway&amp;utm_source=add-contact-to-mm" target="_blank" rel="noopener noreferrer">blog</a>. </p></noscript></div>
+    <p class="link"><a target="_blank" href="https://updates.streak.com/new-add-people-to-a-mail-merge-from-their-contact-card-235216" data-path="/new-add-people-to-a-mail-merge-from-their-contact-card-235216" rel="noopener noreferrer" class="">Read the whole post</a></p>
+  </div>
+  <div class="bottomBar">
+    <a href="https://headway-widget.net/widgets/J14Og7#back" class="back"></a>
+  </div>
+</div>
+
+</div> <!-- /logDetails -->
+
+        </div> <!-- /innercont -->
+      </div> <!-- /cont -->
+    </div> <!-- /outercont -->
+
+
+  
+
+  
+  
+
+</body></html>
